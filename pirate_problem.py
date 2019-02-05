@@ -1,18 +1,22 @@
-# Incomplete
+amount = 16
+loops_brother = 3
 
-coins = 997
-splits = 0
+def check_if_divisible(amount):
+    if amount % 3 - 1 == 0:
+        return True
+    else:
+        return False
 
-def split(coins):
-    removed = coins // 3 - 1
-    coins = coins - removed
-    return coins
+def divide(amount):
+    amount = amount * 3 + 1
+    print(amount)
 
-while coins > 0:
-    lastval = coins
-    print('Split #{}'.format(splits))
-    print('Amount: {}'.format(coins))
-    coins = split(coins)
-    splits += 1
-    if lastval == coins:
-        break
+def do_division(amount, loops_brother):
+    if check_if_divisible(amount) == True:
+        divide(amount)
+    else:
+        print('Not further divisible')
+
+while loops_brother <= 3:
+    do_division(amount, loops_brother)
+    loops_brother += 1
